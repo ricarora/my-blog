@@ -1,9 +1,22 @@
 require 'sinatra'
+require './lib/post'
+require './lib/page'
 
 class MyBlog < Sinatra::Base
 
+before do
+  @posts = Post.all
+end
+
   get "/" do
+    @recent_five = Post.most_recent(5)
     erb :home
+  end
+
+  post "/" do
+    puts params.inspect
+    # Add input into database
+    redirect to("/")
   end
 
   get "/about-me" do
@@ -11,17 +24,13 @@ class MyBlog < Sinatra::Base
   end
 
   get "/posts" do
-      posts_local_folder = '/Users/Tom/Adaacademy/my_blog/views/posts/'
-      files = Dir[posts_local_folder + "*.erb"]
-      files = files.collect { |file| file.sub(posts_local_folder, '').sub('.erb', '')}
-      # fixed_posts = ['first_blog_post', 'second_blog_post']
-      fixed_posts = files
-      erb :post_index, :locals => {:posts => fixed_posts}
+      erb :post_index
   end
 
-  get "/posts/:post_name" do
+  get "/posts/:post_date/:post_name" do
     post_name = params[:post_name]
-    erb :"posts/#{post_name}"
+    post_date = params[:post_date]
+    erb :"posts/#{post_date}/#{post_name}"
   end
 
 end

@@ -1,1 +1,25 @@
-<h2>These are my posts</h2>
+<h2>These are my recent five posts</h2>
+
+<% @recent_five.each do |post| %>
+  <p><ul>
+    <li><a href = "<%= post.url %>"><%= post.title %></a></li>
+    <p><%= post.read[0..200] %></p>
+  </ul></p>
+<% end %>
+
+<hr>
+Params: <%= params.inspect %>
+<hr>
+
+<form action='/' method='POST'>
+  First Name:
+  <input type='text' name='first_name' /><br>
+
+  Last Name:
+  <input type='text' name='last_name' /><br>
+
+  Password:
+  <input type='password' name='password' /><br>
+
+  <input type='submit'>
+</form>

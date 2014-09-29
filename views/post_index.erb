@@ -1,8 +1,7 @@
 <h2>All the posts</h2>
 <hr></hr>
-<ul>
-  <%
-    posts.each do |post| %>
-  <li><a href="posts/<%= post %>"><%= post %></a></li>
-  <% end %>
-</ul>
+<% @posts.each do |post| %>
+  <p><ul>
+    <li><a href = "<%= post.url %>"><%= post.title %></a></li>
+  </ul></p>
+<% end %>
