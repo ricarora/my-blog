@@ -6,10 +6,12 @@ class MyBlog < Sinatra::Base
 
 before do
   @posts = Post.all
+  @recent_five = Post.most_recent(5)
+  @collection_of_posts = Collection.new
 end
 
   get "/" do
-    @recent_five = Post.most_recent(5)
+    # @recent_five = Post.most_recent(5)
     erb :home
   end
 
@@ -31,6 +33,10 @@ end
     post_name = params[:post_name]
     post_date = params[:post_date]
     erb :"posts/#{post_date}/#{post_name}"
+  end
+
+  get "/toons" do
+    erb :techtoons
   end
 
 end

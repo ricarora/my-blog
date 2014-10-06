@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-}
+  background-image: url(/background.jpg);
+  }
 
 .menu {
   overflow: auto;
@@ -40,6 +41,10 @@ body {
   margin-right: auto;
   text-align: center;
   padding: 0;
+  background-color: black;
+  width: 150px;
+  color: white;
+  text-decoration: underline;
 }
 
 .array {
@@ -66,12 +71,17 @@ body {
 
 }
 
+.post-in-box .title {
+  font-size: 10pt;
+}
+
 .array ul {
   list-style: none;
 }
 
 
 .container {
+  margin-top: 50px;
   width: 900px;
   height: 400px;
   border: 1px solid #00fff0;
@@ -79,6 +89,35 @@ body {
   margin-right: auto;
   box-shadow: 3px 3px 3px #00fff0;
   overflow: scroll;
+  background-color: white;
+  padding: 10px;
+}
+
+.home-pic img {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toons img{
+  display: block;
+  height: 400px;
+  width: auto;
+  margin: 7px auto;
+}
+
+.footer {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.footer hr {
+  margin: auto 0;
+  padding: auto 0;
+
 }
 
 @media (min-width:700px) {

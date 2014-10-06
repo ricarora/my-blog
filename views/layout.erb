@@ -3,6 +3,7 @@
 <head>
   <!-- <link href="/reset.css" rel="stylesheet"> -->
   <link href="/layout.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" media="screen" type="text/css" />
   <script src="/app.js"></script>
 </head>
 <body>
@@ -17,12 +18,8 @@
 <hr>
 </div>
 
-<h1>My Life at Ada!</h1>
-<h3>Blog by Richa Arora</h3>
 
 <div class="container">
-  lorem ipsum
-This is the body of the lorem ipsum
 <%=yield%>
 </div>
 
@@ -35,7 +32,7 @@ This is the body of the lorem ipsum
       <% posts.each do |post| %>
       <ul>
       <li><div class="post-in-box">
-        <a href = "<%= post.url %>"><%= post.title %></a>
+        <a href = "<%= post.url %>"><font size="4.5"<%= post.title_print %></font></a>
         <p><%= post.read %></p>
       </div></li>
     </ul>
@@ -45,9 +42,29 @@ This is the body of the lorem ipsum
   <% end %>
 </div>
 
-<img src="/dog.jpg" alt="A Cute Dog">
+<!-- <img src="/dog.jpg" alt="A Cute Dog"> -->
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<nav class="social">
+          <ul>
+              <li><a href="http://twitter.com/Rblossoming">Twitter <i class="fa fa-twitter"></i></a></li>
+              <li><a href="http://facebook.com/richaros">Facebook <i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.linkedin.com/pub/richa-arora/5b/508/498">Linkedin <i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/ricarora">GitHub <i class="fa fa-github"></i></a></li>
+
+          </ul>
+      </nav>
+
+
 
 </body>
+
+<div class=footer>
+
 <hr>
 This is my footer
+
+</div>
 </html>

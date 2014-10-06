@@ -6,7 +6,7 @@ class Post
   # Create an array of Post objects with the attributes set
   # Post.all => [post, post]
   attr_accessor :title, :date, :url
-  
+
   def initialize(array)
     @title = array[-1].sub(".erb", "")
     @date = array[-2]
@@ -14,7 +14,11 @@ class Post
   end
 
   def read
-    File.read("./views/#{@url}.erb")
+    File.read("./views/#{@url}.erb")[42..10000]
+  end
+
+  def title_print
+    File.readlines("./views/#{@url}.erb")[0]
   end
 
   def self.all
